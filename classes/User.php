@@ -48,4 +48,12 @@ class User {
     public function getTotalCartAmount(): float {
         return $this->cart->getTotal();
     }
+
+    /**
+     * pay for products in the cart
+     * @return bool
+     */
+    public function pay(): bool {
+        return !$this->card->isExpired();
+    }
 }

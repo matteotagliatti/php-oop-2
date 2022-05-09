@@ -27,9 +27,12 @@ $guest->getCart()->addProduct($product);
     <title>PHP OOP 2</title>
 </head>
 <body>
-    <pre>Totale del carrello di Gianni: <?php var_dump($gianni->getTotalCartAmount()); // Discounted Price ?>
+    <p>Totale del carrello di Gianni: <?php var_dump($gianni->getTotalCartAmount()); // Discounted Price ?></p>
 
-Totale del carrello di utente non registrato: <?php var_dump($guest->getTotalCartAmount()); // Price ?></pre>
+    <p>Totale del carrello di utente non registrato: <?php var_dump($guest->getTotalCartAmount()); // Price ?></p>
+
+    <p>Gianni può pagare? <?php var_dump($gianni->pay()); ?>. In quanto la sua carta è scaduta? <?php var_dump($card->isExpired()) ?></p>
+
     </pre>
 </body>
 </html>
