@@ -1,10 +1,20 @@
 <?php 
 
+ini_set('display_errors', 1); // Visualize Errors
 include_once __DIR__ . "./classes/Card.php";
 include_once __DIR__ . "./classes/Cart.php";
 include_once __DIR__ . "./classes/Product.php";
 include_once __DIR__ . "./classes/UnregisteredUser.php";
 include_once __DIR__ . "./classes/RegisteredUser.php";
+
+$product = new Product("Guinzaglio", "Accessori per cani", 2.32);
+$card = new Card("Gianni", "0000111122223333", 2010, 23, 1, "123");
+
+$gianni = new RegisteredUser("Gianni", "password", $card);
+$gianni->getCart()->addProduct($product);
+
+$guest = new UnregisteredUser($card);
+$guest->getCart()->addProduct($product);
 
 ?>
 
@@ -17,8 +27,9 @@ include_once __DIR__ . "./classes/RegisteredUser.php";
     <title>PHP OOP 2</title>
 </head>
 <body>
-    <?php 
-        $product1 = new Product("Guinzaglio", "Accessori per cani", 2.12);
-    ?>
+    <pre>Totale del carrello di Gianni: <?php var_dump($gianni->getTotalCartAmount()); // Discounted Price ?>
+
+Totale del carrello di utente non registrato: <?php var_dump($guest->getTotalCartAmount()); // Price ?></pre>
+    </pre>
 </body>
 </html>
