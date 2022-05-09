@@ -32,4 +32,20 @@ class User {
     public function getCard(): Card {
         return $this->card;
     }
+
+    /**
+     * get cart
+     * @return Cart
+     */
+    public function getCart(): Cart {
+        return $this->cart;
+    }
+
+    /**
+     * get total cart amount
+     * @return float
+     */
+    public function getTotalCartAmount(): float {
+        return $this->cart->getTotal();
+    }
 }
