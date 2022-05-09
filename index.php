@@ -10,7 +10,7 @@ include_once __DIR__ . "./classes/RegisteredUser.php";
 $product = new Product("Guinzaglio", "Accessori per cani", 2.32);
 $card = new Card("Gianni", "0000111122223333", 2010, 23, 1, "123");
 
-$gianni = new RegisteredUser("Gianni", "password", $card);
+$gianni = new RegisteredUser("Gianni", "email@email.com","password", $card);
 $gianni->getCart()->addProduct($product);
 
 $guest = new UnregisteredUser($card);

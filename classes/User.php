@@ -5,11 +5,12 @@ require_once __DIR__ . "./Cart.php";
 
 class User {
     protected string $name;
+    protected string $email;
     protected string $password;
     protected Card $card;
     protected Cart $cart;
 
-    public function __construct(string $name, string $password, Card $card = null) {
+    public function __construct(string $name, string $email, string $password, Card $card = null) {
         $this->name = $name;
         $this->password = $password;
         $this->card = $card;
