@@ -1,9 +1,11 @@
 <?php
 
-class Cart {
+class Cart
+{
     private array $products;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->products = [];
     }
 
@@ -12,7 +14,8 @@ class Cart {
      * @param Product $product
      * @return void
      */
-    public function addProduct(Product $product): void {
+    public function addProduct(Product $product): void
+    {
         array_push($this->products, $product);
     }
 
@@ -20,15 +23,17 @@ class Cart {
      *  get products
      * @return array
      */
-    public function getProducts(): array {
+    public function getProducts(): array
+    {
         return $this->products;
     }
 
-     /**
+    /**
      * get total price
      * @return float
      */
-    public function getTotal(): float {
+    public function getTotal(): float
+    {
         $total = 0.0;
 
         foreach ($this->products as $product) {

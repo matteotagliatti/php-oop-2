@@ -3,14 +3,16 @@
 require_once __DIR__ . "./Card.php";
 require_once __DIR__ . "./Cart.php";
 
-class User {
+class User
+{
     protected string $name;
     protected string $email;
     protected string $password;
     protected Card $card;
     protected Cart $cart;
 
-    public function __construct(string $name, string $email, string $password, Card $card = null) {
+    public function __construct(string $name, string $email, string $password, Card $card = null)
+    {
         $this->name = $name;
         $this->email = $email;
         $this->password = $password;
@@ -22,7 +24,8 @@ class User {
      * get user name
      * @return string
      */
-    public function getName(): string {
+    public function getName(): string
+    {
         return $this->name;
     }
 
@@ -30,7 +33,8 @@ class User {
      * get card
      * @return Card
      */
-    public function getCard(): Card {
+    public function getCard(): Card
+    {
         return $this->card;
     }
 
@@ -38,7 +42,8 @@ class User {
      * get cart
      * @return Cart
      */
-    public function getCart(): Cart {
+    public function getCart(): Cart
+    {
         return $this->cart;
     }
 
@@ -46,7 +51,8 @@ class User {
      * get total cart amount
      * @return float
      */
-    public function getTotalCartAmount(): float {
+    public function getTotalCartAmount(): float
+    {
         return $this->cart->getTotal();
     }
 
@@ -54,7 +60,8 @@ class User {
      * pay for products in the cart
      * @return bool
      */
-    public function pay(): bool {
+    public function pay(): bool
+    {
         return !$this->card->isExpired();
     }
 }
