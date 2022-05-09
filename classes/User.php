@@ -12,10 +12,10 @@ class User {
 
     public function __construct(string $name, string $email, string $password, Card $card = null) {
         $this->name = $name;
+        $this->email = $email;
         $this->password = $password;
         $this->card = $card;
         $this->cart = new Cart();
-        
     }
 
     /**
